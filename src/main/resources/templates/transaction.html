@@ -1,0 +1,29 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Online Bank Transaction</title>
+<link rel="stylesheet" href="/css/transactions.css" />
+</head>
+<body>
+	<h1>
+		Transaction ID : <span th:text=${transaction.id}></span>
+		<span th:if="${transaction.type}=='C'"> (Credit)</span>
+		<span th:if="${transaction.type}=='D'"> (Debit)</span>
+	</h1>
+
+	<h3>
+		Date: <span th:text=${transaction.date}></span>
+	</h3>
+	<h3>
+		<span th:if="${transaction.type}=='C'"
+			th:text="'Amount: ' + '' + (${transaction.amount})"></span> 
+		<span
+			th:if="${transaction.type}=='D'"
+			th:text="'Amount: - '+ ''+ (${transaction.amount})"></span>
+	</h3>
+
+	<h3>
+		Description: <span th:text=${transaction.description}></span>
+	</h3>
+	<a href=/transactions >Back to Transactions List</a>
+</body>
+</html>
