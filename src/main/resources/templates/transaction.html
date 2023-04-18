@@ -15,10 +15,10 @@
 	</h3>
 	<h3>
 		<span th:if="${transaction.type}=='C'"
-			th:text="'Amount: ' + '' + (${transaction.amount})"></span> 
+			th:text="'Amount: ' + '' + ' - ' + '' + (${transaction.amount})"></span> 
 		<span
 			th:if="${transaction.type}=='D'"
-			th:text="'Amount: - '+ ''+ (${transaction.amount})"></span>
+			th:text="'Amount: '+ ''+ (${transaction.amount})"></span>
 	</h3>
 
 	<h3>
